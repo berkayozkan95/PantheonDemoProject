@@ -6,7 +6,7 @@ public enum Direction
     RightLeft = 0,
     ForwardBack = 1,
 }
-public class HorizontalObstacleController : MonoBehaviour
+public class HorizontalObstacleController : ObstacleBase
 {
     [Header("Properties")]
     [SerializeField] private Direction moveDirection;

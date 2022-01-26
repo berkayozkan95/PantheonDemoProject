@@ -8,6 +8,7 @@ public class FinishLine : MonoBehaviour
     {
         if(other.gameObject.GetComponent<PlayerController>() != null){
             Debug.Log("You've Finished");
+            other.gameObject.GetComponent<PlayerController>().StartCoroutine("Stop");
         }
     }
 

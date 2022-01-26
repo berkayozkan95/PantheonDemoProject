@@ -6,6 +6,7 @@ public enum Direction
     RightLeft = 0,
     ForwardBack = 1,
 }
+
 public class HorizontalObstacleController : ObstacleBase
 {
     [Header("Properties")]
@@ -17,15 +18,16 @@ public class HorizontalObstacleController : ObstacleBase
     private Vector3 startPos;
     private Vector3 targetPosition;
     private Vector3 movementVector;
+    private Coroutine moveRoutine;
 
 
     private void Start() {
         startPos = transform.position;
         movementVector = (Vector3.right * ((int)moveDirection) + Vector3.forward * (1 - (int)moveDirection)) * moveDistance;
-        targetPosition = transform.position + movementVector;
-        StartCoroutine("Move");
+        targetPosition = transform.position + movementVector;      
+        moveRoutine = StartCoroutine(Move());
     }
-
+    
     IEnumerator Move(){
         while(true){
             float _step = Time.deltaTime * moveSpeed;

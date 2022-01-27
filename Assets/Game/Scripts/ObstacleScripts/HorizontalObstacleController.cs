@@ -17,6 +17,7 @@ public class HorizontalObstacleController : ObstacleBase
     
     private Vector3 startPos;
     private Vector3 targetPosition;
+    private Vector3 currentTarget;
     private Vector3 movementVector;
     private Coroutine moveRoutine;
 
@@ -24,19 +25,26 @@ public class HorizontalObstacleController : ObstacleBase
     private void Start() {
         startPos = transform.position;
         movementVector = (Vector3.right * ((int)moveDirection) + Vector3.forward * (1 - (int)moveDirection)) * moveDistance;
-        targetPosition = transform.position + movementVector;      
+        targetPosition = transform.position + movementVector;   
+        currentTarget = targetPosition;   
         moveRoutine = StartCoroutine(Move());
     }
-    
+
+    private void SwitchTarget(){
+        if(currentTarget == targetPosition)
+            currentTarget = startPos;
+        else
+            currentTarget = targetPosition;
+    }
+  
     IEnumerator Move(){
         while(true){
             float _step = Time.deltaTime * moveSpeed;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, _step);
-            if ((Vector3.Distance(transform.position, targetPosition) < 0.2 && moveSpeed > 0) ||
-                    (Vector3.Distance(transform.position, startPos) < 0.2 && moveSpeed < 0))
+            transform.position = Vector3.MoveTowards(transform.position, currentTarget, _step);
+            if (Vector3.Distance(transform.position, currentTarget) < 0.5 )
             {
                 yield return new WaitForSeconds(timeToWait);
-                moveSpeed *= -1;
+                SwitchTarget();             
             }
             yield return null;
         }

@@ -47,10 +47,11 @@ public class Paintable : MonoBehaviour
         
     }
 
-    private float GetPercentageRed(){
+    private int GetPercentageRed(){
         Color[] allPixels = texture.GetPixels();
-        Color[] nonWhitePixels = allPixels.Where(pixel => pixel != Color.white).ToArray();
+        Color[] nonWhitePixels = allPixels.Where(pixel => pixel.r >= 0.6 && pixel.g < 0.2 && pixel.b < 0.2).ToArray();
         float percentage = (float)nonWhitePixels.Length/(float)allPixels.Length * 100;
-        return percentage;
+        percentage = Mathf.RoundToInt(percentage);
+        return (int)percentage;
     }
 }

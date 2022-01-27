@@ -10,12 +10,16 @@ public class FinishLine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<PlayerController>() != null){
-            Debug.Log("You've Finished");
-            camManager.SwitchPriority();
-            other.gameObject.GetComponent<PlayerController>().StartCoroutine("Stop");    
-            obstacles.gameObject.SetActive(false);
-            brush.IsActive = true;
+        if(other.gameObject.GetComponent<PlayerControllerBase>() != null){
+            other.gameObject.GetComponent<PlayerControllerBase>().Stop();           
+            if(other.CompareTag("Player")){ 
+                other.gameObject.GetComponent<InputManager>().enabled = false; 
+                camManager.SwitchPriority();
+                obstacles.gameObject.SetActive(false);
+                brush.IsActive = true;;
+                }
+             
+            
         }
     }
 

@@ -19,6 +19,7 @@ public class PlayerController : PlayerControllerBase
         if(!isMoving) return;
         float _swerveAmount = swerveSpeed * inputManager.DeltaMoveX;
         _swerveAmount = Mathf.Clamp(_swerveAmount, -1.5f*characterSpeed, 1.5f*characterSpeed);  
-        playerController.Move(new Vector3(characterSpeed * Time.deltaTime ,0, -_swerveAmount * Time.deltaTime));
+        //playerController.Move(new Vector3(characterSpeed * Time.deltaTime ,0, -_swerveAmount * Time.deltaTime));
+        rb.velocity = new Vector3(characterSpeed ,0, -_swerveAmount);
     }
 }

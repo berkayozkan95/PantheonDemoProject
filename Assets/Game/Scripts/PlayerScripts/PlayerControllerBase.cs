@@ -5,15 +5,30 @@ using UnityEngine;
 public class PlayerControllerBase : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] protected CharacterController playerController;
+    [SerializeField] protected Rigidbody rb;
     [SerializeField] protected float characterSpeed;
 
     [Header("Animation")]
     [SerializeField] protected Animator anim;
     [SerializeField] protected float delayTimerOnStop;
     protected Vector3 startPosition;
-    protected bool isMoving => characterSpeed > 0;
 
+    protected bool isMoving{ 
+        get
+        { 
+        if(HasFinished) 
+            return false;
+        else{
+            return true;           
+            }
+        }
+    }
+    [SerializeField]protected bool hasFinished = false;
+
+    public bool HasFinished{
+        get{ return hasFinished;}
+        set{ hasFinished = value;}
+    }
     public float DistanceToFinish{
         get{
             float distance = GameManager.Instance.finishLine.transform.position.x - this.transform.position.x;
@@ -23,6 +38,7 @@ public class PlayerControllerBase : MonoBehaviour
 
     protected virtual void Start() {
         startPosition = gameObject.transform.position;
+        rb = GetComponent<Rigidbody>();
     }
 
     protected virtual void Update()
@@ -32,12 +48,11 @@ public class PlayerControllerBase : MonoBehaviour
     }
 
     public void BackToStart(){
-        playerController.enabled = false;
         gameObject.transform.position = new Vector3(startPosition.x, startPosition.y, startPosition.z);     
-        playerController.enabled = true;
     }
 
     public void Stop(){
-        characterSpeed = 0;
+        rb.velocity = Vector3.zero;
+        rb.detectCollisions = false;
     }
 }

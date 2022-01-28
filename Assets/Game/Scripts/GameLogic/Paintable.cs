@@ -20,6 +20,8 @@ public class Paintable : MonoBehaviour
     private void Start() {
         GameManager.Instance.OnPlayerFinished += OnPlayerFinished;
 
+        //Since the GetPixel and SetPixel functions require a Texture2D object, I used a canvas in world view in order to be able to achive that.
+        //These commands did not function as expected when tried with a sprite.
         var rawImage = GetComponent<RawImage>();
         rect = rawImage.GetComponent<RectTransform>();
         width = (int)rect.rect.width;
@@ -30,6 +32,8 @@ public class Paintable : MonoBehaviour
     }
 
     private void ResetTexture(){
+
+        //resetting the texture at every play through since the painted texture is saved afterwards.
         for (int y = 0; y < texture.height; y++)
         {
             for (int x = 0; x < texture.width; x++)
@@ -51,6 +55,9 @@ public class Paintable : MonoBehaviour
         texture.Apply();      
     }
 
+    //since I am using a "soft" brush, there will be times where while the color might look red it will not be (1,0,0,1) in terms of color.
+    //Thus i implemented an empirical solution where the constraints are determined by me. Also checking for just nonwhite pixels work but this
+    //method deemed to be more accurate.
     public int GetPercentageRed(){
         Color[] allPixels = texture.GetPixels();
         Color[] nonWhitePixels = allPixels.Where(pixel => pixel.r >= 0.6 && pixel.g < 0.2 && pixel.b < 0.2).ToArray();
@@ -59,6 +66,7 @@ public class Paintable : MonoBehaviour
         return (int)percentage;
     }
 
+    //The activation delay is there to wait for the camera transition.
     private void OnPlayerFinished(object sender, GameManager.OnPlayerFinishedEventArgs e){
         Invoke("ActivateBrush", e.activationDelay);
     }

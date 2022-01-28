@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using System;
 
+//I needed to make game manager accessible from everywhere so i had to use a singleton although i do not prefer it.
 public class GameManager : Singleton<GameManager>
 {
     public Collider finishLine;
@@ -20,7 +21,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     private void Awake() {
-#if UNITY_STANDALONE
+#if UNITY_STANDALONE 
          Screen.SetResolution(564, 960, false);
          Screen.fullScreen = false;
 #endif
@@ -39,11 +40,10 @@ public class GameManager : Singleton<GameManager>
     {
         foreach (var item in boundsColliders)
         {
-            Bounds bounds = item.bounds;
+            Bounds bounds = item.bounds; //used colliders to determine the areas to be updated in the pathfinding.
             AstarPath.active.UpdateGraphs(bounds);  
         }   
-        SortPlayerRanking();   
-        
+        SortPlayerRanking();       
     }
 
     private int sortFunc(PlayerControllerBase a, PlayerControllerBase b){

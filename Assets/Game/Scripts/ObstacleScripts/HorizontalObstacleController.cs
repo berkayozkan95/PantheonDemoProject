@@ -24,6 +24,8 @@ public class HorizontalObstacleController : ObstacleBase
 
     private void Start() {
         startPos = transform.position;
+
+        //this is a basic if statement, just as a math function as it seemed easier.
         movementVector = (Vector3.right * ((int)moveDirection) + Vector3.forward * (1 - (int)moveDirection)) * moveDistance;
         targetPosition = transform.position + movementVector;   
         currentTarget = targetPosition;   
@@ -37,7 +39,9 @@ public class HorizontalObstacleController : ObstacleBase
             currentTarget = targetPosition;
     }
   
-    IEnumerator Move(){
+  //Since constantly moving obstacles seemed a bit unnatural, i added some time between each movement. This allows more complex movement as well. 
+  //But since I needed to add wait times I used an Coroutine instead of the Update function.
+    IEnumerator Move(){                    
         while(true){
             float _step = Time.deltaTime * moveSpeed;
             transform.position = Vector3.MoveTowards(transform.position, currentTarget, _step);

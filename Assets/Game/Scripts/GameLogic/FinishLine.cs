@@ -6,8 +6,6 @@ public class FinishLine : MonoBehaviour
 {
     
     [SerializeField] GameObject obstacles;
-    [SerializeField] Paintable brush;
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.GetComponent<PlayerControllerBase>() != null){
@@ -15,7 +13,7 @@ public class FinishLine : MonoBehaviour
             other.GetComponent<PlayerControllerBase>().HasFinished = true;     
             if(other.CompareTag("Player")){ 
                     other.gameObject.GetComponent<InputManager>().enabled = false;
-                    obstacles.gameObject.SetActive(false);  
+                    obstacles.gameObject.SetActive(false);  //I turn the obstacles off as they were blocking the camera while painting.
                     GameManager.Instance.PlayerFinished();
                 }          
         }

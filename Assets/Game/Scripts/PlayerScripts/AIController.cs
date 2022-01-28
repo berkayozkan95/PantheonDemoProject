@@ -17,8 +17,8 @@ public class AIController : PlayerControllerBase
     {   
         base.Start();
         seeker = GetComponent<Seeker>();
-        target = FinishLine.bounds.ClosestPoint(rb.transform.position);
-
+        target = FinishLine.bounds.ClosestPoint(rb.transform.position); //This allows the AI to line up in a straight line at finish line
+                                                                        // instead of stacking on top of each other
         InvokeRepeating("UpdatePath", 0, 0.4f);
     }
 
@@ -48,9 +48,8 @@ public class AIController : PlayerControllerBase
         else
             reachedEndOfPath = false;
 
-        Vector3 direction =  new Vector3(path.vectorPath[currentWayPoint].x- rb.position.x, 0 ,path.vectorPath[currentWayPoint].z- rb.position.z).normalized;
 
-        //playerController.Move(direction * Time.deltaTime * characterSpeed);
+        Vector3 direction =  new Vector3(path.vectorPath[currentWayPoint].x- rb.position.x, 0 ,path.vectorPath[currentWayPoint].z- rb.position.z).normalized;
         rb.velocity = (new Vector3(direction.x, direction.y, direction.z * 2f) * characterSpeed);
 
         float distance = Vector3.Distance(rb.position, path.vectorPath[currentWayPoint]);

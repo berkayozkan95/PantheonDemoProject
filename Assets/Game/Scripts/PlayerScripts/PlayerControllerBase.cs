@@ -53,6 +53,6 @@ public class PlayerControllerBase : MonoBehaviour
 
     public void Stop(){
         rb.velocity = Vector3.zero;
-        rb.detectCollisions = false;
+        rb.detectCollisions = false; //removing collisions at the end as rigidbody collisions tend to push each other off the finish line.
     }
 }

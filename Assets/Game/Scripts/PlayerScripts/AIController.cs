@@ -36,8 +36,7 @@ public class AIController : PlayerControllerBase
     }
 
     protected override void Update()
-    {
-             
+    {        
         base.Update();
         if(!isMoving) return;
         if(path == null) return;
@@ -52,11 +51,9 @@ public class AIController : PlayerControllerBase
         Vector3 direction =  new Vector3(path.vectorPath[currentWayPoint].x- rb.position.x, 0 ,path.vectorPath[currentWayPoint].z- rb.position.z).normalized;
 
         //playerController.Move(direction * Time.deltaTime * characterSpeed);
-        rb.velocity = (direction * characterSpeed);
+        rb.velocity = (new Vector3(direction.x, direction.y, direction.z * 2f) * characterSpeed);
 
         float distance = Vector3.Distance(rb.position, path.vectorPath[currentWayPoint]);
         if(distance < nextWayPointDistance) currentWayPoint ++;
-
-
     }
 }

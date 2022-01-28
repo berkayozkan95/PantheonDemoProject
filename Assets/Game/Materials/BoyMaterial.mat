@@ -70,10 +70,10 @@ Material:
     - _Lumin: 1.36
     - _MaxLight: 1
     - _Metallic: 0
-    - _MinLight: 0.939
+    - _MinLight: 0.889
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Offset: 0.74
+    - _Offset: 0.23
     - _OtlWidth: 5
     - _Parallax: 0.02
     - _Segmented: 1
@@ -85,7 +85,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Steps: 3
+    - _Steps: 3.4
     - _StpSmooth: 0
     - _UVSec: 0
     - _ZWrite: 1

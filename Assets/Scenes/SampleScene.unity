@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.001
+    NearClipPlane: 2.94
     FarClipPlane: 5000
     Dutch: 0
     LensShift: {x: 0, y: 0}
@@ -1578,7 +1578,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.001
+    NearClipPlane: 2.94
     FarClipPlane: 5000
     Dutch: 0
     LensShift: {x: 0, y: 0}
@@ -3289,7 +3289,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 5
-    NearClipPlane: 0.1
+    NearClipPlane: 3.72
     FarClipPlane: 5000
     Dutch: 0
     LensShift: {x: 0, y: 0}
@@ -3474,7 +3474,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.001
+    NearClipPlane: 2.94
     FarClipPlane: 5000
     Dutch: 0
     LensShift: {x: 0, y: 0}
@@ -3669,7 +3669,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.001
+  near clip plane: 2.94
   far clip plane: 5000
   field of view: 40
   orthographic: 0
@@ -4361,7 +4361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAYIewJhA3MZAIAACMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVE1z2jAQ/SuMzi1jm4+U3lpDSA8kTGgnF1+EtcYaZMkjyXwkw3/vShbYJT1h3nu7+/bD/iBcmhpyq/RSc7ZSDMj3AXHP5MugI5/gRHdKbvg7XDVvnNnSiajXvFLLFeKxCzOqAqt5/kPuhBNHCDaSF0pXC7aDVBlrEC6oMICUVtZFS4Q+BuQUAs7h9939Di74lIO0oDtVPB5OR1EUjf6rbmQuaFUDc657QUk8HI9DRDIbRmOvlthWEMbDUeKqKSG4CbaIPde+7ZTWpsGmUMA4xTa9oWQ4niFSAt+V1v3vx78UhQEb/Gl6nnONA2sTk5+qnWJFzb41eaCicaWSydQ7a5OuPvEP05YvtKqeroXjyBWxJc/3r/ScU2N7c+7D88587Id1pGJPtwLeSpDPaqlVIxmSVjcutDGQzHupbs2lJeT7TteavQOb+vNm425XF9/+KRW82jpkOG6BjVB+5jMXAxoX9AsN+0sxIROizsQfA7/prn9SgXjk2likQkHp3G1Vo52ULPzMXDONTZWW4OHguQZJhT2vMY293+Ed1yt7xzxS9/KE4oG7vhN3IR7u9FF0R63V8bYsU6rjCkz50ljBJXSmHfGMc0qVlO2J9WdyDds0uqB5L2zXcPbvbZFJxGL4hrJRXEwgKb4ymG0nNJ8kBRRxNH0g/va4xD6pWLdGw3hwa7JLLvHOrt+UwVLT2p870/S45O+V6o2cy0Jtcg0gX9oMN+OgsQi+nGzBOA5oA9Zy6fdNPjIiVL4Hlt0SZb7TxclqmnVZMlLzg7IOyUjqvyQZcfDtlNcaDhyOrvg12YVc/gJQSwMEFAAACAgAABgh7FVd+uRtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKpQYphqkVaYrKxYZppqlGabkqqZZJpYrKpUVpqmqGBmblSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAABgh7AmEDcxkAgAAIwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABgh7FVd+uRtAAAAeAAAAAkAJAAAAAAAAAAAAAAAsQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABpAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAYIewBy42aZAIAACMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVE1z2jAQ/SuMzi1jm48kvbUOIT0kYUo7ufgirDXWIEsefQRIhv/elSywS3rCvPd29+2H/UG4NC2UVuml5uxJMSDfRsQ/ky+jnnyEA90quebvcNa8cmZrL6JB84tarhBPfZhRDVjNy+9yK7w4QdBJXindLNgWcmWsQbiiwgBSWlkfLRH6GJFDDDjG33f/OzrhUwnSgu5V6XQ8nyRJMvmv2slS0KYF5l0PgrJ0PJ3GiOxunEyDWmJbUZiOJ5mvpoTgJtoi9tiGtnPaGodNoYBxim0GQ9n4do5IDXxbW/9/GP9SVQZs9Kfp8Z5rHFiXmPxQ3RQbanadyTcqnC+VzebBWZf06RN/M+/4Sqvm8Vw4TXwRW/Ny94seS2rsYM5D+L43n4Zh7anY0Y2A1xrks1pq5SRD0mrnQ52B7H6Q6tJcXkO563Wd2SvQtZ83m/a7OoX2D7ngzcYj42kHrIUKM7/zMaBxQT/RcLgUEzMh6k38MfCbbocnFYkHro1FKhaU3t1GOe2lZBFm5ptxNldaQoCj5xYkFfa4wjT2eodX3KDsFfNA/csTi0fu/E5chQS41yfJFbVS+8uyTK32T2DqF2cFl9Cb9sQzzilXUnYnNpzJOWztdEXLQdjWcfbvbZFZwlK4RdkkrWaQVV8Z3G1mtJxlFVRpMr8h4fa4xD6pWHVG43hwa7JPLvHOzt+U0VLTNpw703S/5O+NGoycy0qtSw0gX7oMF+OgsQi+nGzBOA5oDdZyGfZNPgoiVLkDVlwSFaHTxcFqWvRZCtLyN2U9UpA8fEkK4uHLKa80vHHY++LnZCdy+gtQSwMEFAAACAgAABgh7FVd+uRtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKpQYphqkVaYrKxYZppqlGabkqqZZJpYrKpUVpqmqGBmblSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAABgh7AHLjZpkAgAAIwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABgh7FVd+uRtAAAAeAAAAAkAJAAAAAAAAAAAAAAAsQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABpAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -4836,7 +4836,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.001
+    NearClipPlane: 2.94
     FarClipPlane: 5000
     Dutch: 0
     LensShift: {x: 0, y: 0}

@@ -42,8 +42,7 @@ public class GameManager : Singleton<GameManager>
         {
             Bounds bounds = item.bounds; //used colliders to determine the areas to be updated in the pathfinding.
             AstarPath.active.UpdateGraphs(bounds);  
-        }   
-        SortPlayerRanking();       
+        }       
     }
 
     private int sortFunc(PlayerControllerBase a, PlayerControllerBase b){
